@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+
+
+{% endblock %}
+
+{% block content %}
+<section id="about" class="about-us ">
+    <div class="container text-center">
+        <h2 class="section-title main-heading-font">About Sunrise Tea</h2>
+        <p class="section-subtitle sub-heading-font">A Legacy of Quality, Tradition, and Taste</p>
+
+        <div class="row align-items-center mt-4">
+            <div class="col-lg-6 ">
+                <img src="{{ url_for('static', filename='assets/about-img.png') }}" alt="About Sunrise Tea" class="img-fluid rounded shadow-lg">
+            </div>
+            <div class="col-lg-6 mar-top paragraph-font ">
+                <p class="about-text">
+                    At **Sunrise Tea**, we take pride in bringing you the **finest tea leaves** sourced from the lush tea gardens of India. With a commitment to quality and tradition, we blend authenticity with modern flavors to offer you a truly **premium tea experience**.
+                </p>
+                <p class="about-text">
+                    Our journey began with a simple mission: to make high-quality tea **accessible and affordable** for everyone. From hand-picked leaves to carefully crafted blends, each cup of Sunrise Tea is a testament to our dedication to excellence.
+                </p>
+                <p class="about-text">
+                    Whether you prefer the **bold richness of Masala Chai**, the **calming essence of Green Tea**, or the **aromatic notes of herbal infusions**, we have a blend for every taste. Experience the **perfect harmony of flavor and wellness** with our carefully curated selection.
+                </p>
+                <p class="about-text">
+                    Join us on a journey of taste, aroma, and tradition. **Sip, relax, and enjoy the magic of Sunrise Tea!**
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

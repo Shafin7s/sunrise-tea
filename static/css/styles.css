@@ -1,0 +1,405 @@
+/* Navbar */
+
+
+
+@font-face {
+    font-family: 'GulfFont';
+    src: url('../fonts/RamadhanAmazing-jEnDv.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SubGulfFont';
+    src: url('../fonts/AlladhinaDemo-OVwZ8.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.nav-background{
+    background-image: url('static\assets\nav_img.png');
+}
+
+
+.main-heading-font{
+    font-family: 'GulfFont', serif;
+    font-size: 3rem;
+}
+
+.sub-heading-font{
+    font-family: 'SubGulfFont',serif;
+    
+}
+.paragraph-font {
+    font-family: 'Merriweather', serif;
+}
+
+
+
+
+.navbar {
+    height: 6rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0 1rem;
+}
+.bg-gold{
+    background-color: #d1ab64 !important;
+}
+.phone_number{
+    text-decoration: none;
+    color: #000000cf;
+    cursor: pointer;
+}
+/* Change the navbar toggler icon color to white */
+.custom-toggler {
+    border: none; /* Remove default border */
+}
+
+.custom-toggler .navbar-toggler-icon {
+    filter: invert(100%); /* Makes the icon white */
+}
+
+/* Optional: Adjust icon size */
+.navbar-toggler-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Optional: Add hover effect */
+.custom-toggler:hover .navbar-toggler-icon {
+    opacity: 0.8;
+}
+
+/* Navbar Links */
+.link-style {
+    color: #d1ab64 !important; 
+    font-weight: 500 !important;
+    font-size: 1.2rem !important;
+    text-decoration: none;
+    padding: 0 1.2rem !important;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.link-style:hover {
+    color: #b5894b !important;
+}
+
+/* Underline Animation */
+.link-style::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: #b5894b;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.link-style:hover::after {
+    transform: scaleX(1);
+}
+
+
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+
+/* Default - Show Desktop Image */
+.carousel-img-desktop {
+    display: block;
+    width: 100%;
+}
+
+.carousel-img-mobile {
+    display: none;  /* Hide mobile image by default */
+}
+
+
+
+
+/*Featured Product Section */
+.text-gold {
+    color: #d1ab64;
+    font-weight: bold;
+}
+
+.design-img{
+    height:1.5rem;
+}
+.featured-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for the clickable card */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-4 {
+    display: flex;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.clickable-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect to lift the card */
+.clickable-card:hover .product-card {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.card-body h4 {
+    font-size: 1.5rem;
+}
+.card-body h6 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+.card-body p {
+    font-size: 0.95rem;
+    color: grey;
+    flex-grow: 1;
+}
+
+
+
+/* Button Styling */
+.card-btn{
+    margin-top:3rem;
+
+}
+
+.btn-brown {
+    background-color: #c49a6c;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-brown:hover {
+    background-color: #a57b54;
+    color: white;
+}
+
+
+.view-all-btn{
+    color: #c49a6c;
+    background: white;
+    text-decoration: none;
+    border: 1px solid #c49a6c;
+    border-radius: 15px;
+    transition: 0.3s;
+    padding: 12px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.view-all-btn:hover {
+    background-color: #a57b54;
+    color: white;
+}
+
+
+
+
+.testimonials {
+    background: url('../assets/white_texture.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 70px 0;
+    text-align: center;
+}
+
+.testimonials .section-title {
+    color: #4b2e1f;  /* Rich brown shade for headings */
+    font-weight: bold;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #5d4037;  /* Deep coffee brown for readability */
+}
+
+.customer-name {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #8d6e63; /* Softer brown for contrast */
+}
+
+
+
+
+
+
+/* Tea Blog Section */
+
+.text-left{
+    text-align:left;
+}
+.tea-blog {
+    padding: 3rem 0;
+}
+
+/* Blog Image Styling */
+.blog-img {
+    width: 80%;
+    height: 35vh;
+    object-fit: cover;
+    border-radius: 10px;
+    max-width: 100%;  /* Ensures no overflow */
+}
+
+
+
+.tea-blog-first  {
+    color: #666;
+    max-width: 90%;  /* Prevents overflow */
+    margin-bottom: 0.3rem;
+}
+
+.tea-blog-second{
+    font-size: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+
+.tea-blog-btn{
+    color: #c49a6c;
+    transition: 0.3s
+}
+
+.tea-blog-btn:hover{
+    color:red;
+}
+
+
+
+
+
+
+
+/* Footer  */
+
+.bg-dark {
+    background-color: #222;
+}
+.quick-link:hover {
+    text-decoration: underline;
+    color: #d1ab64 !important;
+}
+.social-icon {
+    color: white;
+    transition: color 0.3s;
+}
+.social-icon:hover {
+    color: #d1ab64;
+}
+
+
+
+
+
+
+
+/* Mobile Navigation Fix */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        text-align: center;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .link-style {
+        font-size: 1.2rem !important;  /* Ensure font size remains the same */
+        padding: 0.5rem 0;
+    }
+}
+
+
+
+/* Responsive Fixes Blog Section*/
+@media (max-width: 768px) {
+    .blog-img {
+        width: 100%;
+        height: auto; /* Adjust height for small screens */
+    }
+    .tea-blog p {
+        max-width: 100%;
+    }
+}
+
+/* When screen size is below 768px, switch to mobile image */
+@media screen and (max-width: 768px) {
+    .carousel-img-desktop {
+        display: none; /* Hide desktop image */
+    }
+    .carousel-img-mobile {
+        display: block; /* Show mobile image */
+        width: 100%;
+    }
+}

@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- Bootstrap Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- Carousel Inner -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='assets/carousel/cor_3.png') }}"
+                 class=" w-100 object-fit-cover carousel-img-desktop"
+                 alt="Tea Image 1">
+            <img src="{{ url_for('static', filename='assets/carousel/cor_3_mobile.png') }}"
+                 class=" w-100 object-fit-cover carousel-img-mobile"
+                 alt="Tea Image 1 Mobile">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ url_for('static', filename='assets/carousel/cor_2.png') }}"
+                 class="w-100 object-fit-cover carousel-img-desktop"
+                 alt="Tea Image 2">
+            <img src="{{ url_for('static', filename='assets/carousel/cor_2_mobile.png') }}"
+                 class="w-100 object-fit-cover carousel-img-mobile"
+                 alt="Tea Image 2 Mobile">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ url_for('static', filename='assets/carousel/cor_1.png') }}"
+                 class="Sw-100 object-fit-cover carousel-img-desktop"
+                 alt="Tea Image 3">
+            <img src="{{ url_for('static', filename='assets/carousel/cor_1_mobile.png') }}"
+                 class="w-100 object-fit-cover carousel-img-mobile"
+                 alt="Tea Image 3 Mobile">
+        </div>
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+
+
+
+<div class="featured-products ">
+
+        <!-- Featured Product Section -->
+        <section class="container my-5 featured-section">
+            <img src="/static/assets/sample-design1.png" alt="" class="design-img">
+            <h1 class="text-center text-gold fw-bold my-4 main-heading-font">Most Selling Products</h1>
+            <div class="row my-5">
+
+                {% for product in products %}
+
+                    {%if product.id <= 3 %}
+                        <div class="col-md-4">
+                            <a href="{{ url_for('product_details',product_id=product.id) }}" class="clickable-card">
+                                <div class="card product-card">
+                                    <img src="{{ product.product_img }}" class="card-img-top" alt="Premium Tea">
+                                    <div class="card-body d-flex flex-column text-center">
+                                        <h4 class="card-title text-gold sub-heading-font">{{ product.product_title }}</h4>
+                                        <p class="text-muted paragraph-font">{{ product.product_subtitle }}</p>
+                                        <p class="card-text paragraph-font">{{ product.product_description }}</p>
+                                        <a href="{{ url_for('product_details',product_id=product.id) }}" class="btn-brown card-btn">View Details</a>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+
+            <a href="{{ url_for('products') }}" class="view-all-btn"> View All</a>
+
+            
+        </section>
+</div>
+
+
+
+<!-- Testimonials Section -->
+<section class="testimonials my-5 py-5 text-center">
+    <div class="container">
+        <img src="/static/assets/sample-design1.png" alt="" class="design-img">
+        <h1 class="text-center text-gold fw-bold my-4 main-heading-font">What Our Customers Say</h1>
+        
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for testimonial in testimonials %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text sub-heading-font">"{{ testimonial.feedback }}"</p>
+                        <h5 class="testimonial-author sub-heading-font">- {{ testimonial.name }}</h5>
+                        <span class="testimonial-rating">{{ testimonial.rating }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Tea Blog Section -->
+<section class="tea-blog my-5 ">
+    <div class="container text-center">
+        <img src="/static/assets/sample-design1.png" alt="" class="design-img">
+        <h1 class="text-center text-gold fw-bold my-4 main-heading-font">Tea Blogs</h1>
+
+        <!-- Blog Post 1 (Left) -->
+
+        {% for blog in blogs %}
+
+            <div class="row align-items-center mb-5 text-left">
+                <div class="col-md-6 ">
+                    <img src="{{ blog.img_url }}" class="blog-img" alt="Blog Image 1">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-gold sub-heading-font">{{ blog.title }}</h3>
+                    <p class="paragraph-font tea-blog-first">{{ blog.subtitle }}</p>
+                    <p class="paragraph-font tea-blog-second">Published on {{ blog.date }} | By Sunrise Tea</p>
+                    <a href="{{ url_for('tea_blog',blog_id=blog.id) }}" class=" tea-blog-btn " >Read More</a>
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+{% endblock %}

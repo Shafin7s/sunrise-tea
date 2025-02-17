@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+
+
+{% endblock %}
+
+{% block content %}
+<div class="contact-section py-5">
+    <div class="container">
+        <!-- <h2 class="text-center text-gold mb-4">Contact Us</h2> -->
+        <div class="d-flex justify-content-center">
+            <div class="contact-box d-flex flex-md-row flex-column">
+                <!-- Video Section (40%) -->
+                <div class="contact-video">
+                    <video class="video-fluid dis-none" autoplay loop muted>
+                        <source src="{{ url_for('static', filename='assets/contact-us-video.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Form Section (60%) -->
+                <div class="contact-form p-4">
+                    <h4 class="text-center text-gold main-heading-font">Get In Touch</h4>
+                    <form method="POST" class="paragraph-font">
+                        {{ form.hidden_tag() }}
+
+                        <div class="mb-3">
+                            {{ form.name.label(class="form-label text-gold") }}
+                            {{ form.name(class="form-control") }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.email.label(class="form-label text-gold") }}
+                            {{ form.email(class="form-control") }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.phone.label(class="form-label text-gold") }}
+                            {{ form.phone(class="form-control") }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.message.label(class="form-label text-gold") }}
+                            {{ form.message(class="form-control", rows=4) }}
+                        </div>
+
+                        <div class="text-center">
+                            {{ form.submit(class="btn-brown btn-lg w-100") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

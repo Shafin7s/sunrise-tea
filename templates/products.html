@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="catalog-section py-5">
+    <div class="container">
+        <h1 class="text-center section-title mb-5 main-heading-font ">Our Premium Products</h1>
+
+        <div class="row justify-content-center">
+            {% for product in products %}
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 ">
+                <div class="product-card">
+                    <img src="{{ product.product_img }}" alt="google drive" class="product-image">
+                    <div class="product-details paragraph-font">
+                        <h2 class="product-name sub-heading-font">{{ product.product_title }}</h2>
+                        <p class="product-desc ">{{ product.product_subtitle }}</p>
+                        <div class="product-pricing">
+                            <span class="discounted-price">₹{{ product.discounted_price }}</span>
+                            <span class="actual-price">₹{{ product.actual_price }}</span>
+                        </div>
+                        <div class="rating">⭐ {{ product.product_rating }}/5</div>
+                        <a href="{{ url_for('product_details', product_id=product.id) }}" class="btn-golden w-100 mt-3 text-decoration-none">Buy Now</a>
+                        
+<!--                        <button class="btn-golden w-100 mt-3">Buy Now</button>-->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

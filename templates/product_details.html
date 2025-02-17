@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product_details.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="product-details-section py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Product Image (Left) -->
+            <div class="col-md-6">
+                <img src="{{ product.product_img }}" class="product-image" alt="Premium Green Tea">
+            </div>
+
+            <!-- Product Info (Right) -->
+            <div class="col-md-6 product-description paragraph-font">
+                <h2 class="product-name main-heading-font">{{ product.product_title }}</h2>
+                <p class="product-desc">{{ product.product_subtitle }}</p>
+
+                <p class="product-desc">{{ product.product_description }}</p>
+
+
+                <div class="product-pricing">
+                    <span class="discounted-price">₹{{ product.actual_price }}</span>
+                    <span class="actual-price">₹{{ product.discounted_price }}</span>
+                </div>
+
+                <div class="rating">
+                    ⭐ {{ product.product_rating }}/5 (250 Reviews)
+                </div>
+
+                <!-- Call Us Now Button -->
+                <a href="tel:+91 8305333361" class="btn-call-now">📞 Call Us Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

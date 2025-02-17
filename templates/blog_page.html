@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="blog-container">
+
+    <div class="container py-5">
+    <img src="{{ blog.img_url }}" class="blog-image my-5" alt="Green Tea Benefits">
+        <div class="row">
+            <!-- Blog Content -->
+            <div class="col-md-8 paragraph-font">
+                <div class="blog-post">
+                    <h1 class="blog-title main-heading-font">{{ blog.title }}</h1>
+                    <h3 class="blog-meta sub-heading-font">{{ blog.subtitle }}</h3>
+
+                    <p>Published on {{ blog.date }} | By <a href="url_for('home')">Sunrise Tea Company</a></p>
+
+
+                    <div class="">
+                        {{ blog.body|safe }}
+                    </div>
+
+
+                    <a href="{{ url_for('home') }}" class="btn-back">← Back to Home</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

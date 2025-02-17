@@ -1,0 +1,61 @@
+
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="col-lg-8 col-md-10 mx-auto my-5">
+
+<div class="contact-form p-4">
+    <h4 class="text-center text-gold">Add Product</h4>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+            {{ form.product_heading.label(class="form-label text-gold") }}
+            {{ form.product_heading(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.product_subheading.label(class="form-label text-gold") }}
+            {{ form.product_subheading(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.product_description.label(class="form-label text-gold") }}
+            {{ form.product_description(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.product_img_url.label(class="form-label text-gold") }}
+            {{ form.product_img_url(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.product_actual_price.label(class="form-label text-gold") }}
+            {{ form.product_actual_price(class="form-control", rows=4) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.product_discounted_price.label(class="form-label text-gold") }}
+            {{ form.product_discounted_price(class="form-control", rows=4) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.product_rating.label(class="form-label text-gold") }}
+            {{ form.product_rating(class="form-control", rows=4) }}
+        </div>
+
+        <div class="text-center">
+            {{ form.submit(class="btn-brown btn-lg w-100") }}
+        </div>
+    </form>
+</div>
+</div>
+{% endblock %}
